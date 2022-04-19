@@ -21,18 +21,22 @@ const BookingForm = () => {
 		name: '',
 		numberOfPeople: 0,
 		dateTime: '',
-		numberOfContact: '',
+		numberOfContact: ''
 	});
 
 	const handleInputOnChange = ({currentTarget: {name, value}}: ChangeEvent<HTMLInputElement>) => {
 		setForm((state) => ({...state, [name]: value}))
-		console.log(typeof value)
-		console.log(value)
 	}
 
 
 	const handleOnBookATable = () => {
 		dispatch(addBooking(bookingFactory(form)));
+		setForm({
+			name: '',
+			numberOfPeople: 0,
+			dateTime: '',
+			numberOfContact: '',
+		})
 	};
 
 	const formStyle = {

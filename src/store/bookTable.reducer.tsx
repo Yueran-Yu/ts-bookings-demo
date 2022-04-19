@@ -5,7 +5,7 @@ export const initialState = {
 }
 export type State = typeof initialState
 
-export const bookTableReducer: ReducerProps = (state: State, action: IAction): StateProps => {
+export const bookTableReducer: ReducerProps = (state: State, action: IAction) => {
 	switch (action.type) {
 		case ADD_BOOKING: {
 			return {
